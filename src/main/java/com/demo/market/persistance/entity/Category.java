@@ -18,15 +18,15 @@ public class Category {
     @Column(name = "estado")
     private Boolean state;
 
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "category")
     private List<Product> products;
 
     public Integer getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(Integer idCategoria) {
-        this.idCategory = idCategoria;
+    public void setIdCategory(Integer idCategory) {
+        this.idCategory = idCategory;
     }
 
     public String getDescription() {
@@ -43,5 +43,13 @@ public class Category {
 
     public void setState(Boolean state) {
         this.state = state;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

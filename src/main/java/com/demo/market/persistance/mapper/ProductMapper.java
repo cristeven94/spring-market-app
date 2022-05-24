@@ -15,10 +15,10 @@ public interface ProductMapper {
     @Mappings({
             @Mapping(source = "idProduct", target = "productId"),
             @Mapping(source = "name", target = "name"),
-            @Mapping(source = "categoryId", target = "idCategory"),
-            @Mapping(source = "price", target = "salePrice"),
-            @Mapping(source = "stock", target = "stockQuantity"),
-            @Mapping(source = "active", target = "state"),
+            @Mapping(source = "idCategory", target = "categoryId"),
+            @Mapping(source = "salePrice", target = "price"),
+            @Mapping(source = "stockQuantity", target = "stock"),
+            @Mapping(source = "state", target = "active"),
             @Mapping(source = "category", target = "category")
     })
     DomainProduct toDomainProduct(Product product);
