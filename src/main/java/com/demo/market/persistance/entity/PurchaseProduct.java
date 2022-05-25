@@ -3,7 +3,7 @@ package com.demo.market.persistance.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="compras_producto")
+@Table(name="compras_productos")
 public class PurchaseProduct {
 
     @EmbeddedId
@@ -18,12 +18,29 @@ public class PurchaseProduct {
     private Boolean state;
 
     @ManyToOne
+    @MapsId("idPurchase")
     @JoinColumn(name = "id_compra", insertable = false,updatable = false)
     private Purchase purchase;
 
     @ManyToOne
     @JoinColumn(name = "id_producto",insertable = false,updatable = false)
     private Product product;
+
+    public Purchase getPurchase() {
+        return purchase;
+    }
+
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
     public PurchaseProductPK getId() {
         return id;
